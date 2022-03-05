@@ -7,7 +7,19 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
+
 const app = express();
+
+// Allow use of environment variables
+require('dotenv').config()
+
+// Set up mongoose connection
+const mongoose = require('mongoose');
+const mongoDB = `mongodb+srv://${process.env.MONGO_CLIENT_USER}:${process.env.MONGO_CLIENT_PASS}@cluster0.inocc.mongodb.net/known_universe?retryWrites=true&w=majority`
+
+mongoose.connect(mongoDB).catch(error => console.log(error))
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'))
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
