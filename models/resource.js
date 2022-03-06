@@ -7,7 +7,7 @@ const ResourceSchema = new Schema(
         cost: {type: Number, required: true},
         desc: {type: String, required: true, maxLength: 240},
         benefit: {type: String, required: true, maxLength: 240},
-    }
+    }, {versionKey: false}
 )
 
 ResourceSchema

@@ -5,7 +5,7 @@ const GalaxySchema = new Schema(
     {
         name: {type: String, required: true, maxLength: 100},
         desc: {type: String, required: true, maxLength: 240}
-    }
+    }, {versionKey: false}
 )
 
 GalaxySchema
