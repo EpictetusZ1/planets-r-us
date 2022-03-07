@@ -158,7 +158,7 @@ function createPlanets(cb) {
                 planetCreate("Everlasting Whiterun", "Famous for its beloved 'Cloud District', this planet boats an almost nordic environment. Unfortunately, it is infested with a parasitic bug: Nazeem-ites, which MUST be removed via Pest-Removal, unless you want to be annoyed endlessly.", "normal", ["Pest-Removal"], galaxies[2], 10000, 3, callback)
             },
             function(callback) {
-                planetCreate("Tomorrows Shadow", "This planets got a special dark-matter like substance floating through the air, this causes you shadow to appear a day behind your movement - strange. Otherwise it's a lovely place, feels kind of like a big Vermont.", "normal", [], galaxies[0], 48500, 4, callback)
+                planetCreate("Tomorrows Shadow", "This planets got a special dark-matter like substance floating through the air, this causes your shadow to appear a day behind your movement - strange. Otherwise it's a lovely place, feels kind of like a big Vermont.", "normal", [], galaxies[0], 48500, 4, callback)
             },
             function(callback) {
                 planetCreate("Atlantis Retaliating", "Lot's of water here, probably not suitable for a land based species. Pros: Lots of salmon, magikarp, and trout. Cons: will need a Biome-Generator", "water", ["Biome-Generator"], galaxies[1], 37000, 5, callback)

@@ -1,0 +1,15 @@
+extends layout
+block content
+    h1= title
+
+    h5 All Planet Instances:
+        hr
+        ul
+            each planetInstance in list_planet_instances
+                li
+                    a(href=planetInstance.url) #{planetInstance.name || "No Name"}
+                    p Planet Instance Owned: #{planetInstance.owned}
+                    p This planet is an instance of: #{planetInstance.planet}
+            else
+                li There are no planet instances.
+

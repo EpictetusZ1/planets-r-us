@@ -1,0 +1,17 @@
+extends layout
+block content
+    h1= title
+
+    h5 All Resources:
+        hr
+        ul
+            each resource in list_resources
+                li
+                    p #[strong Resource:]  #{resource.name}
+                        div
+                            p #[strong Cost:]  #{resource.cost} <sup>Space Credits</sup>
+                            p #[strong Description:]  #{resource.desc}
+                            p #[strong Benefit:]  #{resource.benefit}
+            else
+                li There are no resources
+

@@ -1,0 +1,14 @@
+extends layout
+block content
+    h1= title
+
+    h5 All Galaxies:
+        hr
+        ul
+            each galaxy in list_galaxies
+                li
+                    a(href=galaxy.url) #{galaxy.name}
+                    p #{galaxy.desc}
+            else
+                li There are no galaxies.
+

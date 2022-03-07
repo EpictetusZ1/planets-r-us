@@ -30,11 +30,11 @@ router.get("/planets", planetController.planets)
 
 /// PLANET INSTANCE ROUTES ///
 
+// GET request for one list of all Planet Instances
+router.get("/planetinstances", planetInstanceController.planet_instances)
+
 // GET request for one Planet Instance
 router.get("/planetinstance/:id", planetInstanceController.planet_instance_details)
-
-// GET request for one list of all Planet Instances
-router.get("/planetinstances", planetInstanceController.planet_instance_details)
 
 // GET request to update Planet Instance
 router.get("/planetinstance/:id/update", planetInstanceController.planet_instance_create_get)

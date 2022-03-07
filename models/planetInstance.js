@@ -11,6 +11,6 @@ const PlanetInstanceSchema = new Schema(
 
 PlanetInstanceSchema
     .virtual("url")
-    .get( () => "/planets/planetInstance/" + this._id)
+    .get( () => "/planets/planetinstance/" + this._id)
 
 module.exports = mongoose.model("PlanetInstance", PlanetInstanceSchema)

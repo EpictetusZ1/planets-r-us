@@ -1,0 +1,17 @@
+extends layout
+block content
+    h1= title
+
+    h5 All Planet Types:
+        hr
+        ul
+          each planet in list_planets
+            li
+                a(href=planet.url) #{planet.astronomicalName}
+                p #{planet.desc}
+                p Required Resources: &nbsp;
+                    | #{planet.requiredResources[0] || "None"}
+                p Cost: #{planet.price} <sup>Space Credits</sup>
+          else
+            li There are no planets.
+

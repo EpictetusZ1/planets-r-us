@@ -1,8 +1,12 @@
 const PlanetInstance = require("../models/planetInstance");
 
 // Display list of all PlanetInstances
-exports.planet_instances = (req, res) => {
-    res.send("NOT IMPLEMENTED: Planet Instances list")
+exports.planet_instances = (req, res, next) => {
+    PlanetInstance.find({})
+        .exec( (err, list_planet_instances) => {
+            if (err) return next(err)
+            res.render("planet_instances_list", { title: "All Planet Instances",  list_planet_instances: list_planet_instances})
+        })
 }
 
 // Display detail page for a specific PlanetInstance

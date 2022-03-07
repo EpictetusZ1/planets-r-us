@@ -2,4 +2,18 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #[em Planets-r-Us], an Node/ Express and MongoDB (via Mongoose) website developed as assigned by The Odin Project.
+  hr
+  h3 Your go-to source for intergalactic conquest!
+  br
+
+  if error
+    p Error getting site content.
+  else
+    h5 Our Planetary Registry has the following inventory:
+
+    ul
+      li #[strong Galaxies:] !{data.galaxy_count}
+      li #[strong Types of Planets:] !{data.planet_type_count}
+      li #[strong Planet Instances available:] !{data.planet_instance_count}
+      li #[strong Planetary Resources:] !{data.resources_count}
