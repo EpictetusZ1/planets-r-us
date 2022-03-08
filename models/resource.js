@@ -12,10 +12,10 @@ const ResourceSchema = new Schema(
 
 ResourceSchema
     .virtual("url")
-    .get( () => "/resources/" + this._id)
+    .get( function() { return `/planetary-registry/resources/${this._id}`} )
 
 ResourceSchema
     .virtual("imgUrl")
-    .get( () => `/public/images/resourceAssets/${this._id}.svg`)
+    .get( function() { return `/public/images/resourceAssets/${this._id}.svg`} )
 
 module.exports = mongoose.model("Resource", ResourceSchema)

@@ -4,11 +4,13 @@ block content
 
     h5 All Galaxies:
         hr
-        ul
+        ul.picList
             each galaxy in list_galaxies
                 li
-                    a(href=galaxy.url) #{galaxy.name}
-                    p #{galaxy.desc}
+                    img(src=galaxy.imgUrl alt="galaxy image")
+                    div
+                        a(href=galaxy.url ) #{galaxy.name}
+                        p #{galaxy.desc}
             else
                 li There are no galaxies.
 

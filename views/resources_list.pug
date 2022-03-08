@@ -7,11 +7,11 @@ block content
         ul
             each resource in list_resources
                 li
-                    p #[strong Resource:]  #{resource.name}
-                        div
-                            p #[strong Cost:]  #{resource.cost} <sup>Space Credits</sup>
-                            p #[strong Description:]  #{resource.desc}
-                            p #[strong Benefit:]  #{resource.benefit}
+                    h6 #[strong Resource:]  #{resource.name}
+                    div.resDesc
+                        p #[strong Cost:]  #{resource.cost} <sup>Space Credits</sup>
+                        p #[strong Description:]  #{resource.desc}
+                        p #[strong Benefit:]  #{resource.benefit}
             else
                 li There are no resources
 

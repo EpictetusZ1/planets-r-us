@@ -4,12 +4,21 @@ block content
 
     h5 All Planet Instances:
         hr
-        ul
+        ul.picList
             each planetInstance in list_planet_instances
                 li
-                    a(href=planetInstance.url) #{planetInstance.name || "No Name"}
-                    p Planet Instance Owned: #{planetInstance.owned}
-                    p This planet is an instance of: #{planetInstance.planet}
+                    a(href=planetInstance.url) #{planetInstance.name || "No Name" }
+                if planetInstance.owned === true
+                    span
+                        p Planet Instance Owned: &nbsp;
+                        p.text-danger #{planetInstance.owned}
+                else if planetInstance.owned  === false
+                    span
+                        p Planet Instance Owned: &nbsp;
+                        p.text-success #{planetInstance.owned}
+                    br
+                    span This planet is an instance of the planet type: &nbsp;
+                        a(href=planetInstance.planet.url) #{planetInstance.planet.astronomicalName}
+                    hr
             else
                 li There are no planet instances.
-

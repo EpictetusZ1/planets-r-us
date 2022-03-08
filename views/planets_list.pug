@@ -4,14 +4,19 @@ block content
 
     h5 All Planet Types:
         hr
-        ul
+        ul.picList
           each planet in list_planets
             li
-                a(href=planet.url) #{planet.astronomicalName}
-                p #{planet.desc}
-                p Required Resources: &nbsp;
-                    | #{planet.requiredResources[0] || "None"}
-                p Cost: #{planet.price} <sup>Space Credits</sup>
+                img(src=planet.imgUrl alt="8-bit planet gif")
+                div
+                    a(href=planet.url) #{planet.astronomicalName}
+                    p #{planet.desc}
+
+                    span Number In Stock: #{planet.numInStock} &nbsp; &nbsp;
+                        p Required Resources: &nbsp;
+                        | #{planet.requiredResources[0] || "None"} &nbsp; &nbsp;
+                        p Cost: #{planet.price} <sup>Space Credits</sup>
+
           else
             li There are no planets.
 

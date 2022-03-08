@@ -12,7 +12,7 @@ const planetaryRegistry = require("./routes/planetaryRegistry")
 const app = express();
 
 // Allow use of environment variables
-require('dotenv').config()
+require("dotenv").config()
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
@@ -30,11 +30,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter)
 app.use("/users", usersRouter)
-app.use("/planetaryregistry", planetaryRegistry)
+app.use("/planetary-registry", planetaryRegistry)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

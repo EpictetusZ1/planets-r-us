@@ -15,10 +15,10 @@ const PlanetSchema = new Schema(
 
 PlanetSchema
     .virtual("url")
-    .get( () => "/planets/" + this._id)
+    .get( function() { return `/planetary-registry/planets/${this._id}` })
 
 PlanetSchema
     .virtual("imgUrl")
-    .get( () => `/public/images/planetAssets/${this._id}.gif`)
+    .get( function() { return `/images/planetAssets/${this._id}.gif`} )
 
 module.exports = mongoose.model("Planet", PlanetSchema)

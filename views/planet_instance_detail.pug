@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+    h1 Planet Instance:
+    div.planetDetails
+        h2 #{planet_info.name || "No Name"}
+        img(src=planet_info.planet.imgUrl)
+        h3 An instance of: #{planet_info.planet.astronomicalName}
+
+    div.claim
+        if !planet_info.owned
+            p This planet is available to claim
+            button(class="btn btn-primary") Claim Planet Now!
+        else
+            p This planet is already taken
+

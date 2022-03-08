@@ -22,7 +22,7 @@ router.get('/galaxies', galaxyController.galaxy_list)
 /// PLANET ROUTES ///
 
 // GET request for one Planet
-router.get("/planet/:id", planetController.planet_details)
+router.get("/planets/:id", planetController.planet_details)
 
 // GET request for list of all Planets
 router.get("/planets", planetController.planets)
@@ -34,13 +34,13 @@ router.get("/planets", planetController.planets)
 router.get("/planetinstances", planetInstanceController.planet_instances)
 
 // GET request for one Planet Instance
-router.get("/planetinstance/:id", planetInstanceController.planet_instance_details)
+router.get("/planetinstances/:id", planetInstanceController.planet_instance_details)
 
 // GET request to update Planet Instance
-router.get("/planetinstance/:id/update", planetInstanceController.planet_instance_create_get)
+router.get("/planetinstances/:id/update", planetInstanceController.planet_instance_create_get)
 
 // POST request to update Planet Instance
-router.post('/planetinstance/:id/update', planetInstanceController.planet_instance_create_post)
+router.post('/planetinstances/:id/update', planetInstanceController.planet_instance_create_post)
 
 
 /// RESOURCE ROUTES ///

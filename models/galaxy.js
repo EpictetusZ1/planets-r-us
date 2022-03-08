@@ -10,10 +10,10 @@ const GalaxySchema = new Schema(
 
 GalaxySchema
     .virtual("url")
-    .get( () => "/galaxies/" + this._id)
+    .get( function() { return `/planetary-registry/galaxy/${this._id}`} )
 
 GalaxySchema
     .virtual("imgUrl")
-    .get( () => `/public/images/galaxyAssets/${this._id}.gif`)
+    .get( function() { return `/images/galaxyAssets/${this._id}.gif`} )
 
 module.exports = mongoose.model("Galaxy", GalaxySchema)

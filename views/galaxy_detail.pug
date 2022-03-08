@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+    h1 Galaxy: #{galaxy.name}
+
+    div(style='margin-left:20px;margin-top:20px')
+
+        h4 Planets in #{galaxy.name}:
+
+        dl
+            each planetInstance in galaxy_planet_types
+                dd
+                    img.smallPic(src=planetInstance.planet.imgUrl)
+                    span
+                        p #[strong Planet Name:]  &nbsp;
+                        a(href=planetInstance.url) #{planetInstance.name || "No Name"}
+                        p &nbsp; &nbsp;
+                        p #[strong Planet Owned:] #{planetInstance.owned}
+                span
+                    dt #[strong Planet Type:] &nbsp;
+                    p #{planetInstance.planet.astronomicalName}
+                hr
+            else
+                p This galaxy has no planets
