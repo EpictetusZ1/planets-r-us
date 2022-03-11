@@ -6,12 +6,19 @@ block content
     div.planetDetails
         h2 #{planet_info.name || "No Name"}
         img(src=planet_info.planet.imgUrl)
-        h3 An instance of: #{planet_info.planet.astronomicalName}
+        h3 Planet Type: #{planet_info.planet.astronomicalName}
+        dl
+            dd #[strong Planet Resources:]  &nbsp;
+                p=planet_info.resources[0] || "No Resources"
+
+            dd #[strong Required Resources:]  &nbsp;
+                p=planet_info.planet.requiredResources[0] || "No Required Resources"
+            sub Planet ID: #{planet_info._id}
 
     div.claim
         if !planet_info.owned
             p This planet is available to claim
-            button(class="btn btn-primary") Claim Planet Now!
+            a(href=`${planet_info.url}/create`)
+                button(class="btn btn-primary") Claim Planet Now!
         else
             p This planet is already taken
-

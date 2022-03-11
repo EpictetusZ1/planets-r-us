@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+    h1= title
+
+    form(method="POST" action="")
+        div.form-group
+            label(for="name") Name
+            input#name.form-control(type="text", placeholder="Name of planet" name="name" required="true")
+        div.form-group
+            span #[strong Planet Required Resources] &nbsp; &nbsp;
+                p=planet_info.planet.requiredResources[0]
+        div.form-group
+            label(for="resources") Add A Resource
+            select#resources.form-control(name="resources" required="true" )
+                for resource in resource_data
+                    option(value=resource.name) #{resource.name}
+                option(value="") None
+
+        div.form-group
+                label Planet Type
+                h5= planet_info.planet.astronomicalName
+                img(src=planet_info.planet.imgUrl)
+        button.btn.btn-primary(type="submit") Claim Planet
+
+        div.disclaimer-text
+            h6 Disclaimer: How 'Claim Planet' Works
+            p 'Claiming' a planet, simply means that you have named it! It's <em>owned</em> property will be changed to <em>true</em>.
+            p This means other used won't be able to update it, the planet is yours!
+            p Please note that once you hit 'Claim Planet' you <strong><u>cannot update the name</u></strong> you have given it, so be sure its a good one!
+
+    if errors
+        ul
+            for error in errors
+                li!= error.msg

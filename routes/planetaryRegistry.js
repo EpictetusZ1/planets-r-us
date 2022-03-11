@@ -37,10 +37,10 @@ router.get("/planetinstances", planetInstanceController.planet_instances)
 router.get("/planetinstances/:id", planetInstanceController.planet_instance_details)
 
 // GET request to update Planet Instance
-router.get("/planetinstances/:id/update", planetInstanceController.planet_instance_create_get)
+router.get("/planetinstances/:id/create", planetInstanceController.planet_instance_create_get)
 
 // POST request to update Planet Instance
-router.post('/planetinstances/:id/update', planetInstanceController.planet_instance_create_post)
+router.post('/planetinstances/:id/create', planetInstanceController.planet_instance_create_post)
 
 
 /// RESOURCE ROUTES ///

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+
+    h1 Planet Type:
+    h3 #{planet.astronomicalName}
+    img(src=planet.imgUrl alt="8-bit planet gif")
+    div
+        p #{planet.desc}
+
+    span Number In Stock: #{planet.numInStock} &nbsp; &nbsp;
+        p Required Resources: &nbsp;
+        | #{planet.requiredResources[0] || "None"} &nbsp; &nbsp;
+        p Cost: #{planet.price} <sup>Space Credits</sup>

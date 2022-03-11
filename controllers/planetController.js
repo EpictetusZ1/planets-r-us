@@ -10,6 +10,10 @@ exports.planets = (req, res, next) => {
 }
 
 // Display detail page for a specific planet
-exports.planet_details = (req, res) =>  {
-    res.send("NOT IMPLEMENTED: Planet detail: " + req.params.id)
+exports.planet_details = (req, res, next) =>  {
+    Planet.findById(req.params.id)
+        .exec( (err, planet_detail) => {
+            if (err) return next(err)
+            res.render("planet_type_detail", { title: "Planet Type",  planet: planet_detail})
+        })
 }

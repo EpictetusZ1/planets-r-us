@@ -115,8 +115,46 @@ span {
 }
 
 .claim {
+  display: inline-flex;
+  align-items: center;
   border-radius: 15px;
   padding: 10px;
   background-color: rgba(87, 87, 87, 0.45);
   max-width: 75%;
+}
+
+.claim p {
+  padding: 0;
+  margin: 0 15px 0 0;
+}
+
+.error {
+  font-family: 'Lucida Grande', Helvetica, sans-serif;
+  color: #FFF;
+}
+
+.error pre {
+  color: #FFF;
+}
+
+form {
+  max-width: 55vw;
+}
+
+@media only screen and (max-width: 1000px) {
+  form {
+    max-width: 80vw;
+  }
+}
+
+.form-group p {
+  margin: 0;
+}
+
+.disclaimer-text {
+  margin-top: 15px;
+  padding: 20px 10px;
+  background-color: rgba(3, 206, 164, 0.67);
+  border-radius: 15px;
+
 }
