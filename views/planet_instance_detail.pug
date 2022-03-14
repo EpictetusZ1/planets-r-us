@@ -8,11 +8,16 @@ block content
         img(src=planet_info.planet.imgUrl)
         h3 Planet Type: #{planet_info.planet.astronomicalName}
         dl
-            dd #[strong Planet Resources:]  &nbsp;
+            dd #[strong Description:]  &nbsp;
+                p=planet_info.planet.desc
+            dd #[strong Planet Cost:]  &nbsp;
+                p #{planet_info.planet.price} <sup>Space Credits</sup>
+            dd #[strong Planet Aquired Resources:]  &nbsp;
                 p=planet_info.resources[0] || "No Resources"
-
             dd #[strong Required Resources:]  &nbsp;
                 p=planet_info.planet.requiredResources[0] || "No Required Resources"
+            dd #[strong Number in Stock:]  &nbsp;
+                p=planet_info.planet.numInStock
             sub Planet ID: #{planet_info._id}
 
     div.claim

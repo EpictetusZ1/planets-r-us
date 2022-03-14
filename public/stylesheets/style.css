@@ -157,3 +157,11 @@ form {
   background-color: rgba(3, 206, 164, 0.67);
   border-radius: 15px;
 }
+
+p strong {
+  color: var(--bronze);
+}
+
+dt strong {
+  color: var(--bronze);
+}
