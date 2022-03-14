@@ -35,15 +35,24 @@ exports.galaxy_list = (req, res, next) => {
 
 // Display detail page with associated planets for a specific galaxy
 exports.galaxy_detail = (req, res, next) =>  {
-
     async.parallel({
         galaxy: (cb) => {
             Galaxy.findById(req.params.id)
                 .exec(cb)
         },
+
         galaxy_planet_types: (cb) => {
-            PlanetInstances.find({ "galaxy": req.params.id })
-                .populate("planet")
+            Planet.find({ "galaxy": req.params.id })
+                .exec(cb)
+        },
+        galaxy_planet_instances: (cb) => {
+            PlanetInstances.find({})
+                .populate({
+                    path: "planet",
+                    populate: {
+                        path: "galaxy",
+                    }
+                })
                 .exec(cb)
         },
     }, (err, results) => {
@@ -53,6 +62,16 @@ exports.galaxy_detail = (req, res, next) =>  {
             err.status = 404
             return next(err)
         }
-        res.render("galaxy_detail", { title: "Galaxy Details", galaxy: results.galaxy, galaxy_planet_types: results.galaxy_planet_types} )
+        const filterResults = () => {
+            let finalResults = []
+            for (let i = 0; i < results.galaxy_planet_instances.length; i++) {
+                if (results.galaxy_planet_instances[i].planet.galaxy.id === req.params.id) {
+                    finalResults.push(results.galaxy_planet_instances[i])
+                }
+            }
+            return finalResults
+        }
+
+        res.render("galaxy_detail", { title: "Galaxy Details", galaxy: results.galaxy, galaxy_planet_types: filterResults()} )
     })
 }

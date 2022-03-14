@@ -17,7 +17,23 @@ block content
                         p #[strong Planet Owned:] #{planetInstance.owned}
                 span
                     dt #[strong Planet Type:] &nbsp;
-                    p #{planetInstance.planet.astronomicalName}
+                    p #{planetInstance.planet.astronomicalName} &nbsp; &nbsp;
+                span
+                    dt #[strong Planet Conditions:] &nbsp;
+                    p #{planetInstance.planet.planetType} &nbsp;
+                span
+                    dt #[strong About:] &nbsp;
+                    p #{planetInstance.planet.desc} &nbsp; &nbsp;
+                span
+                    dt #[strong Cost:] &nbsp;
+                    p #{planetInstance.planet.price} <sup>Space Credits</sup> &nbsp; &nbsp;
+                span
+                    dt #[strong Number In Stock:] &nbsp;
+                    p #{planetInstance.planet.numInStock} &nbsp; &nbsp;
+                div
+                span
+                    dt #[strong Required Resources:] &nbsp;
+                    p #{planetInstance.planet.requiredResources[0] || "None"}
                 hr
             else
                 p This galaxy has no planets

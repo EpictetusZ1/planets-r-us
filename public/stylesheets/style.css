@@ -128,7 +128,7 @@ span {
   margin: 0 15px 0 0;
 }
 
-.error {
+.error, .error h1, .error h2 {
   font-family: 'Lucida Grande', Helvetica, sans-serif;
   color: #FFF;
 }
@@ -156,5 +156,4 @@ form {
   padding: 20px 10px;
   background-color: rgba(3, 206, 164, 0.67);
   border-radius: 15px;
-
 }
